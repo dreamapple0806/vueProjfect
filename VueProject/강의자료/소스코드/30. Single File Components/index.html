@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js"></script>
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/http-vue-loader"></script>
+<script>
+	window.onload = function(){
+		
+		var component1 = {
+				template : '<div>'
+						 +     '<h1>Component1</h1>'
+						 +     '<a href="http://google.com">google</a><br/>'
+						 +     '<a href="http://apple.com">apple</a><br/>'
+				         + '</div>'
+		}
+		
+		var vm1 = new Vue({
+			el : '#test',
+			components : {
+				'com1' : component1,
+				'com2' : httpVueLoader('component2.vue')
+			}
+		})	
+	}
+</script>
+</head>
+<body>
+	<div id='test'>
+		<com1></com1>
+		<com2></com2>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
